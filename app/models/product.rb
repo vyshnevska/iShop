@@ -6,9 +6,22 @@ class Product < ActiveRecord::Base
     with: %r{\.(gif|jpg|png)\Z}i,
     message: 'must be a URL for GIF, JPG or PNG image.'
   }
+  has_many :cart_items
+  before_destroy :not_refer_to_cart_item
 
   # Returns the most recently updated product
   def self.latest
     Product.order(:updated_at).last
   end
+
+  private
+    # Ensure that there are no cart items referencing this product
+    def not_refer_to_cart_item
+      if cart_items.empty?
+        return true
+      else
+        errors.add(:base, 'Line Items present')
+        return false
+      end
+    end
 end
