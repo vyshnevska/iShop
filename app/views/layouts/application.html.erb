@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IShop</title>
+  <title>IShop - Online Store </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
+<body>
+  <div id="banner">
+    <div id="logo">
+      <%= image_tag("shop_logo.png") %>
+      <span><%= @page_title || "{ iShop }" %> </span>
+    </div>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><a href="http://www....">Home</a></li>
+        <li><a href="http://www..../faq">Questions</a></li>
+        <li><a href="http://www..../news">News</a></li>
+        <li><a href="http://www..../contact">Contact</a></li>
+      </ul>
+    </div>
+    <div id="main" class='<%= controller.controller_name %>'> 
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

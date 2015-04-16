@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+/* START_HIGHLIGHT */
+#banner {
+  background: #404040;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #bfbfbf;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+  text-align: center;
+
+  #logo img {
+    width: 60px;
+    height: 40px;
+    vertical-align: sub;
+    margin-right: -14px;
+  }
+}
+
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+#columns {
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: white;
+  }
+
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background-color: #f8f8f8;
+    border-style: solid;
+    border-color: #404040;
+    border-width: 2px 0 2px;
+  
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+        display: block;
+        position: relative;
+        float: none;
+        padding: 0;
+        border-style: solid;
+        border-width: 1px 0 0;
+
+        a {
+          background-color: #f8f8f8;
+          color: #585858;
+          font-size: small;
+          display: block;
+          height: 39px;
+          line-height: 17px;
+          padding-left: 7px;
+          text-shadow: none!important;
+          font-size: 13px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+/* END_HIGHLIGHT */
