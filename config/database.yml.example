@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: iShop
+test:
+  <<: *default
+  database: iShop_test
+
+production:
+  <<: *default
+  database: iShop
