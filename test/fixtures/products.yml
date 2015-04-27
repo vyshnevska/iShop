@@ -1,13 +1,13 @@
 one:
   title: MyString
   description: MyText
-  image_url: MyString
+  image: MyString
   price: 9.99
 
 two:
   title: MyString
   description: MyText
-  image_url: MyString
+  image: MyString
   price: 9.99
 ruby:
   title: Programming Ruby
@@ -15,4 +15,9 @@ ruby:
       Code quality tools Reek Flay Flog Roodi Dust Heckle Metrics_fu
       RSpec Cucumber Autotest RCov SimpleCov www.jetbrains.com 4
   price: 49.50
-  image_url: tools.png
+  image: tools.png
+product_with_image:
+  title: Product_Image
+  description: With Image
+  price: 1.50
+  image: 'test.gif'

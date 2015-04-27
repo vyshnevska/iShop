@@ -10,6 +10,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.DS_Store
 
 # Ignore configs
 config/database.yml
@@ -25,3 +26,4 @@ config/database.yml
 #Ignore system images
 /public/system
 /public/system/*
+/public/images

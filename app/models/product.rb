@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  validates :title, :description, :image_url, presence: true
+  validates :title, :description, :image, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
   validates :image_url, allow_blank: true, format: {
@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
   }
   has_many :cart_items
   before_destroy :not_refer_to_cart_item
+
+  mount_uploader :image, ImageUploader
 
   # Returns the most recently updated product
   def self.latest
