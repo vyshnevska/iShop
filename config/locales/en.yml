@@ -20,7 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  controllers:
+    cart_items:
+      created: 'Cart item was successfully created.'
+    carts:
+      empty: 'Your cart is currently empty'
   models:
     product:
       validations:
@@ -40,6 +44,7 @@ en:
     carts:
       items: 'Cart Items' 
       new: 'New Cart'
+      empty: 'Empty cart'
     products:
       new: 'New Product'
       title: 'Title'

@@ -1,12 +1,14 @@
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
-<h2><%= I18n.t('views.cart.items')%></h2>
+<h2><%= I18n.t('views.carts.items')%></h2>
 <ul>
   <% @cart.cart_items.each do |item| %>
-    <li><%= item.product.title %></li>
+    <li><%= item.quantity %> &times; <%= item.product.title %></li>
   <% end %>
 </ul>
+
+<%= button_to I18n.t('views.carts.empty'), @cart, method: :delete, confirm: I18n.t('views.nav.confirm_delete') %>
 
 <%= link_to I18n.t('views.nav.edit'), edit_cart_path(@cart) %> |
 <%= link_to I18n.t('views.nav.back'), carts_path %>
