@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Product:</strong>
+  <strong><%= I18n.t('views.cart_items.product')%></strong>
   <%= @cart_item.product %>
 </p>
 
 <p>
-  <strong>Cart:</strong>
+  <strong><%= I18n.t('views.cart_items.cart')%></strong>
   <%= @cart_item.cart %>
 </p>
 
-<%= link_to 'Edit', edit_cart_item_path(@cart_item) %> |
-<%= link_to 'Back', cart_items_path %>
+<%= link_to I18n.t('views.nav.edit'), edit_cart_item_path(@cart_item) %> |
+<%= link_to I18n.t('views.nav.back'), cart_items_path %>

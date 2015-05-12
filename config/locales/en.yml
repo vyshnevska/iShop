@@ -21,3 +21,32 @@
 
 en:
   hello: "Hello world"
+  models:
+    product:
+      validations:
+        image: 'must be a URL for GIF, JPG or PNG image.'
+        lines: 'Line Items present'
+  views:
+    nav:
+      edit: 'Edit'
+      back: 'Back'
+      show: 'Show'
+      delete: 'Destroy'
+      confirm_delete: 'Are you sure?'
+    cart_items:
+      product: 'Product'
+      cart: 'Cart'
+      new: 'New Cart Item'
+    carts:
+      items: 'Cart Items' 
+      new: 'New Cart'
+    products:
+      new: 'New Product'
+      title: 'Title'
+      description: 'Description'
+      image: 'Image'
+      price: 'Price'
+    store:
+      index:
+        title: 'iShop Catalog'
+        add_to_cart: 'Add to Cart'

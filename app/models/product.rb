@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   validates :title, uniqueness: true
   validates :image_url, allow_blank: true, format: {
     with: %r{\.(gif|jpg|png)\Z}i,
-    message: 'must be a URL for GIF, JPG or PNG image.'
+    message: I18n.t('models.product.validations.image')
   }
   has_many :cart_items
   before_destroy :not_refer_to_cart_item
@@ -22,7 +22,7 @@ class Product < ActiveRecord::Base
       if cart_items.empty?
         return true
       else
-        errors.add(:base, 'Line Items present')
+        errors.add(:base, I18n.t('models.product.validations.lines'))
         return false
       end
     end

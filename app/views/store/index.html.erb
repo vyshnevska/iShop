@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>iShop Catalog</h1>
+<h1><%= I18n.t('views.store.index.title')%></h1>
 
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
@@ -13,7 +13,7 @@
         <%= sanitize(product.description) %>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price)%></span>
-          <%= button_to 'Add to Cart', cart_items_path(product_id: product) %>
+          <%= button_to I18n.t('views.store.index.add_to_cart'), cart_items_path(product_id: product) %>
         </div>
       </div>
     <% end %>
