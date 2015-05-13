@@ -10,4 +10,8 @@ class Cart < ActiveRecord::Base
     end
     item
   end
+
+  def total_price
+    cart_items.map(&:total_price).inject(:+)
+  end
 end

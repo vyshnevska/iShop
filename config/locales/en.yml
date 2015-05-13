@@ -45,6 +45,8 @@ en:
       items: 'Cart Items' 
       new: 'New Cart'
       empty: 'Empty cart'
+      user_cart: 'Your Cart'
+      total: 'Total'
     products:
       new: 'New Product'
       title: 'Title'

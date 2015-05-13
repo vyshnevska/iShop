@@ -3,15 +3,23 @@
 <% end %>
 
 <h2><%= I18n.t('views.carts.items')%></h2>
-
+<div class='cart_title'>
+  <%= I18n.t('views.carts.user_cart')%>
+</div>
 <div class='cart_items'>
   <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
   <ul>
     <% @cart.cart_items.each do |item| %>
       <li>
-        <%= item.quantity %> &times; <%= item.product.title %>
+        <%= item.quantity %> &times;
+        <%= item.product.title %>
+        <span class="item_price"><%= number_to_currency(item.total_price) %></span>
       </li>
     <% end %>
+    <li class='total_line'>
+      <%= I18n.t('views.carts.total')%>
+      <span><%= number_to_currency(@cart.total_price) %></span>
+    </li>
   </ul>
   <%= button_to I18n.t('views.carts.empty'), @cart, method: :delete, confirm: I18n.t('views.nav.confirm_delete') %>
 </div>

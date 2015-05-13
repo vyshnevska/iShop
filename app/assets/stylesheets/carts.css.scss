@@ -14,3 +14,17 @@
   }
 }
 
+.carts {
+  .cart_title {
+    font: 120% bold;
+  }
+
+  .item_price, .total_line {
+    text-align: right;
+  }
+
+  .total_line {
+    font-weight: bold;
+    border-top: 1px solid #595;
+  }
+}
