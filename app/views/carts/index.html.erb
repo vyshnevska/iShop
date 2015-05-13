@@ -11,7 +11,8 @@
     <% @carts.each do |cart| %>
       <tr>
         <td class="list_description">
-          <%="Cart: #{format_date(cart.created_at)}"%>
+          <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
+          <p><%="Cart: #{format_date(cart.created_at)}"%></p>
         </td>
         <td><%= link_to I18n.t('views.nav.show'), cart %></td>
         <td><%= link_to I18n.t('views.nav.edit'), edit_cart_path(cart) %></td>

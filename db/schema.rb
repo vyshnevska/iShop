@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150512144925) do
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quantity"
+    t.integer  "quantity",   default: 0
   end
 
   add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id", using: :btree

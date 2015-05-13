@@ -1,14 +1,21 @@
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
-<h2><%= I18n.t('views.carts.items')%></h2>
-<ul>
-  <% @cart.cart_items.each do |item| %>
-    <li><%= item.quantity %> &times; <%= item.product.title %></li>
-  <% end %>
-</ul>
 
-<%= button_to I18n.t('views.carts.empty'), @cart, method: :delete, confirm: I18n.t('views.nav.confirm_delete') %>
+<h2><%= I18n.t('views.carts.items')%></h2>
+
+<div class='cart_items'>
+  <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
+  <ul>
+    <% @cart.cart_items.each do |item| %>
+      <li>
+        <%= item.quantity %> &times; <%= item.product.title %>
+      </li>
+    <% end %>
+  </ul>
+  <%= button_to I18n.t('views.carts.empty'), @cart, method: :delete, confirm: I18n.t('views.nav.confirm_delete') %>
+</div>
+
 
 <%= link_to I18n.t('views.nav.edit'), edit_cart_path(@cart) %> |
 <%= link_to I18n.t('views.nav.back'), carts_path %>

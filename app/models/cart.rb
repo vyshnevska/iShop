@@ -2,7 +2,7 @@ class Cart < ActiveRecord::Base
   has_many :cart_items, dependent: :destroy
 
   def add_product(product)
-    item = cart_items.find_by_product_id(product)
+    item = cart_items.find_or_create_by(product_id: product)
     if item
       item.quantity += 1
     else
