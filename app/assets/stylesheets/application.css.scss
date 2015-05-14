@@ -55,7 +55,20 @@
     border-style: solid;
     border-color: #404040;
     border-width: 2px 0 2px;
+
+    form, div {
+      display: inline;
+    }
+
+    input {
+      font-size: small;
+    }
   
+    #cart {
+      font-size: smaller;
+      color: #03a9f4;
+    }
+
     ul {
       padding: 0;
 

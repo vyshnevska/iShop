@@ -1,0 +1,7 @@
+<li>
+  <%= cart_item.quantity %> &times;
+  <%= cart_item.product.title %>
+  <span class="item_price">
+    <%= number_to_currency(cart_item.total_price) %>
+  </span>
+</li>

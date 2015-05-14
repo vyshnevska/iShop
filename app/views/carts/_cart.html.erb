@@ -1,0 +1,16 @@
+<div class='cart_title'>
+  <%= I18n.t('views.carts.user_cart')%>
+</div>
+
+<div class='cart_items'>
+  <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
+  <ul>
+    <%= render(@cart.cart_items) %>
+    <li class='total_line'>
+      <%= I18n.t('views.carts.total')%>
+      <span><%= number_to_currency(@cart.total_price) %></span>
+    </li>
+  </ul>
+
+  <%= button_to I18n.t('views.carts.empty'), @cart, method: :delete, confirm: I18n.t('views.nav.confirm_delete') %>
+</div>
