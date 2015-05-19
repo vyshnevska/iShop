@@ -10,6 +10,6 @@ class CartItemsControllerTest < ActionController::TestCase
       post :create, product_id: products(:ruby).id
     end
 
-    assert_redirected_to cart_item_path(assigns(:cart_item).cart)
+    assert_redirected_to store_url(assigns(:cart_item).cart)
   end
 end

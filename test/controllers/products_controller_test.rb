@@ -6,7 +6,7 @@ class ProductsControllerTest < ActionController::TestCase
     @mock_product = {
       title: 'Lorem Ipsum',
       description: 'Wibbles are fun!',
-      image_url: 'lorem.jpg',
+      image: fixture_file_upload("files/test.gif"),
       price: 19.95
     }
   end
