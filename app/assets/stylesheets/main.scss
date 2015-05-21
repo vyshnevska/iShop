@@ -1,0 +1,22 @@
+/*
+* To write styles that affect the website globally, put it under base directory
+
+* All your Sass access to mixins place in mixins.scss file 
+* @import "base/mixins.scss";
+*
+* To write styles that affect the website globally, they will go in globals.scss
+* @import "base/globals.scss";
+*
+* To write styles that affect the specific module of the website, put it under styles directory
+* @import "styles/*.scss";
+*
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "base/layout.scss";
+@import "base/scaffolds.scss";
+
+@import "styles/carts.scss";
+@import "styles/products.scss";
+@import "styles/store.scss";
