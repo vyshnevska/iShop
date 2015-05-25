@@ -1,6 +1,18 @@
-<h1>Listing products</h1>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
 
-<table>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
   <tbody>
     <% @products.each do |product| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
@@ -9,20 +21,25 @@
         </td>
         <td class="list_description">
           <dl>
-            <dt><%= product.title %></dt>
+            <dt><%= link_to product.title, product_path(product) %></dt>
             <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
           </dl>
         </td>
-        <td class="list_actions">
-          <td><%= link_to I18n.t('views.nav.show'), product %></td>
-          <td><%= link_to I18n.t('views.nav.edit'), edit_product_path(product) %></td>
-          <td><%= link_to I18n.t('views.nav.delete'), product, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete') } %></td>
+        <td>
+          <td><%= product.price %></td>
+        </td>
+        <td>
+          <%= link_to I18n.t('views.nav.edit'),
+                      edit_product_path(product), :class => 'btn btn-default btn-xs' %>
+          <%= link_to I18n.t('views.nav.delete'),
+                      product_path(product),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => I18n.t('views.nav.confirm_delete')) },
+                      :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to I18n.t('views.products.new'), new_product_path %>
+<%= link_to I18n.t('views.products.new'), new_product_path, :class => 'btn btn-primary' %>

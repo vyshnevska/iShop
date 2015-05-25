@@ -1,22 +1,25 @@
-<p>
-  <strong><%= I18n.t('views.products.title') %></strong>
-  <%= @product.title %>
-</p>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong><%= I18n.t('views.products.description') %></strong>
-  <%= @product.description %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @product.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @product.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dd><%= image_tag(@product.image_url, :width => 100) if @product.image?%></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @product.price %></dd>
+</dl>
 
-<p>
-  <strong><%= I18n.t('views.products.image') %></strong>
-  <%= image_tag(@product.image_url, :width => 100) if @product.image?%>
-</p>
-
-<p>
-  <strong><%= I18n.t('views.products.price') %></strong>
-  <%= @product.price %>
-</p>
-
-<%= link_to I18n.t('views.nav.edit'), edit_product_path(@product) %> |
-<%= link_to I18n.t('views.nav.back'), products_path %>
+<div class="form-actions">
+  <%= link_to I18n.t('views.nav.back'), products_path, :class => 'btn btn-default'  %>
+  <%= link_to I18n.t('views.nav.edit'), edit_product_path(@product), :class => 'btn btn-default' %>
+  <%= link_to I18n.t('views.nav.delete'),
+                product_path(@product),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => I18n.t('views.nav.confirm_delete')) },
+                :class => 'btn btn-danger' %>
+</div>
