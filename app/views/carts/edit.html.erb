@@ -1,6 +1,5 @@
-<h1>Editing cart</h1>
-
-<%= render 'form' %>
-
-<%= link_to I18n.t('views.nav.show'), @cart %> |
-<%= link_to I18n.t('views.nav.back'), carts_path %>
+<%- model_class = Cart -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

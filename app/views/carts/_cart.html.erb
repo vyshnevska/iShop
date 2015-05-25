@@ -1,5 +1,5 @@
 <div class='cart_title'>
-  <%= I18n.t('views.carts.user_cart')%>
+  <%="Cart: #{format_date(cart.created_at)}"%>
 </div>
 
 <div class='cart_items'>
@@ -11,6 +11,7 @@
       <span><%= number_to_currency(@cart.total_price) %></span>
     </li>
   </ul>
-
-  <%= button_to I18n.t('views.carts.empty'), @cart, method: :delete, confirm: I18n.t('views.nav.confirm_delete') %>
+  <div>
+    <%= link_to I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: btn_class_for(:empty) %>  
+  </div>
 </div>

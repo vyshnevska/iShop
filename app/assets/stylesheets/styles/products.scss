@@ -31,7 +31,24 @@
     padding-left: 1em;
   }
 
-  .list_line_even { background: #6fb3e0; }
+  .table-striped tbody {
+    tr {
+      border-top: 1px solid #e0f0fd;
+    }
 
-  .list_line_odd { background: #9abc32; }
+    .list_line_even {
+      border-left: 4px solid #008ede;
+      padding: 3px;
+      clear: both;
+      background-color: #edf8ff;
+      border-bottom: 1px solid #ddf1fc;
+    }
+
+    .list_line_odd {
+      padding: 3px;
+      clear: both;
+      background-color: #fff;
+      border-bottom: 1px solid #ddf1fc;
+    }
+  }
 }

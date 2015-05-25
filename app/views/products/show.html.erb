@@ -14,12 +14,4 @@
   <dd><%= @product.price %></dd>
 </dl>
 
-<div class="form-actions">
-  <%= link_to I18n.t('views.nav.back'), products_path, :class => 'btn btn-default'  %>
-  <%= link_to I18n.t('views.nav.edit'), edit_product_path(@product), :class => 'btn btn-default' %>
-  <%= link_to I18n.t('views.nav.delete'),
-                product_path(@product),
-                :method => 'delete',
-                :data => { :confirm => t('.confirm', :default => I18n.t('views.nav.confirm_delete')) },
-                :class => 'btn btn-danger' %>
-</div>
+<%= render 'shared/form_actions', rsr_name: model_class.model_name, rsr_obj: @product %>

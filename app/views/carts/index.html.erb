@@ -1,27 +1,29 @@
-<h1>Listing carts</h1>
-
-<table>
+<%- model_class = Cart -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th><%= model_class.model_name.human %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
         <td class="list_description">
-          <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
+          <%= link_to image_tag(url_for('cart.png'), class: 'cart_icon'), cart_path(cart)%>
           <p><%="Cart: #{format_date(cart.created_at)}"%></p>
         </td>
-        <td><%= link_to I18n.t('views.nav.show'), cart %></td>
-        <td><%= link_to I18n.t('views.nav.edit'), edit_cart_path(cart) %></td>
-        <td><%= link_to I18n.t('views.nav.delete'), cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete') } %></td>
+        <td>
+          <%= link_to I18n.t('views.nav.show'), cart , class: xs_btn_class_for(:default) %>
+          <%= link_to I18n.t('views.nav.edit'), edit_cart_path(cart), class: xs_btn_class_for(:default) %>
+          <%= link_to I18n.t('views.nav.delete'), cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: xs_btn_class_for(:destroy)%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to  I18n.t('views.carts.new'), new_cart_path %>
+<%= link_to I18n.t('views.carts.new'), new_cart_path, :class => btn_class_for(:new) %>

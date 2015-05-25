@@ -1,7 +1,8 @@
-<h2><%= I18n.t('views.carts.items')%></h2>
+<%- model_class = Cart -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
 <%= render @cart %>
 
-
-<%= link_to I18n.t('views.nav.edit'), edit_cart_path(@cart) %> |
-<%= link_to I18n.t('views.nav.back'), carts_path %>
+<%= render 'shared/form_actions', rsr_name: model_class.model_name, rsr_obj: @cart %>
