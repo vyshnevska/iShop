@@ -12,7 +12,8 @@ module ApplicationHelper
       edit: 'btn btn-info',
       destroy: 'btn btn-danger',
       default: 'btn btn-default',
-      empty: 'btn btn-warning'
+      empty: 'btn btn-warning',
+      add_to_cart: 'btn btn-warning'
     }[btn_type] || 'btn btn-default'
   end
 
