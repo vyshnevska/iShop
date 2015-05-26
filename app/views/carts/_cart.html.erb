@@ -1,21 +1,32 @@
-<div class='cart_title'>
-  <%="Cart: #{format_date(cart.created_at)}"%>
-</div>
-
-<% if @cart.cart_items.any? %>
-  <div class='cart_items'>
-    <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
-    <ul>
-      <%= render(@cart.cart_items) %>
-      <li class='total_line'>
-        <%= I18n.t('views.carts.total')%>
-        <span><%= number_to_currency(@cart.total_price) %></span>
-      </li>
-    </ul>
-    <div>
-      <%= link_to I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: btn_class_for(:empty) %>  
+<%- model_class = Cart -%>
+<div class='cart_details'>
+  <div class='row'>
+    <div class='col-xs-12 cart_title'>
+      <%="Cart: #{format_date(cart.created_at)}"%>
     </div>
   </div>
-<% else %>
-  <%= I18n.t('views.carts.empty')%>
-<% end %>
+  <div class='row'>
+    <div class='col-xs-4'>
+      <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
+    </div>
+    <div class='col-xs-8'>
+      <ul>
+        <%= render(@cart.cart_items) %>
+        <li class='price total_line'>
+          <%= I18n.t('views.carts.total')%>
+          <span><%= number_to_currency(@cart.total_price) %></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class='row'>
+    <%= link_to I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: btn_class_for(:cart) %>
+  </div>
+
+  <% unless local_assigns[:sideway] %>
+    <div class='row pull-right'>
+      <%= render 'shared/form_actions', rsr_name: model_class.model_name, rsr_obj: @cart %>
+    </div>
+  <% end %>
+
+</div>
