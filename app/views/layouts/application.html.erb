@@ -27,9 +27,11 @@
         </li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <%= hidden_div_if(@cart.cart_items.empty?, id: 'cart') do %>
-        <%= render @cart, sideway: true %>
-      <% end %>
+      <%# if @cart %>
+        <%= hidden_div_if(@cart.cart_items.empty?, id: 'cart') do %>
+          <%= render @cart, sideway: true %>
+        <% end %>
+      <%# end %>
     </div>
     <div id="main" class='<%= controller.controller_name %>'>
       <%= render partial: "shared/flash_messages", flash: flash %>

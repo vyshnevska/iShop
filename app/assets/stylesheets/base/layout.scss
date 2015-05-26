@@ -9,8 +9,7 @@
   text-align: center;
 
   #logo img {
-    width: 60px;
-    height: 40px;
+    @include resize(60px, 40px);
     vertical-align: sub;
     margin-right: -14px;
   }
@@ -21,14 +20,16 @@
     width: 75%;
     float: left;
     padding: 1em;
-    background: white;
+    background: $main-bg-color;
+    color: $side-font-color;
   }
 
   #side {
+    color: $side-font-color;
     float: left;
     padding: 1em 2em;
     width: 25%;
-    background-color: #f8f8f8;
+    background-color: $side-bg-color;
     border-style: solid;
     border-color: #404040;
     border-width: 2px 0 2px;
@@ -43,7 +44,7 @@
   
     #cart {
       font-size: smaller;
-      color: #03a9f4;
+      /*color: #03a9f4;*/
     }
 
     ul {
@@ -59,8 +60,7 @@
         border-width: 1px 0 0;
 
         a {
-          background-color: #f8f8f8;
-          color: #585858;
+          color: $side-font-color;
           font-size: small;
           display: block;
           height: 39px;
@@ -75,3 +75,12 @@
   }
 }
 /* END_HIGHLIGHT */
+
+.store, .products, .carts {
+  img {
+    @include resize(100px);
+  }
+  .image {
+    @include resize(105px);
+  }
+}

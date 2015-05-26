@@ -2,12 +2,12 @@
 <div class='cart_details'>
   <div class='row'>
     <div class='col-xs-12 cart_title'>
-      <%="Cart: #{format_date(cart.created_at)}"%>
+      <%="Cart: #{format_date(@cart.created_at)}"%>
     </div>
   </div>
   <div class='row'>
     <div class='col-xs-4'>
-      <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
+      <%= image_tag(url_for('cart.png'), class: local_assigns[:sideway] ? 'cart-xs' : 'img-thumbnail')%>
     </div>
     <div class='col-xs-8'>
       <ul>

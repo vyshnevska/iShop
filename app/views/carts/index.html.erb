@@ -12,8 +12,8 @@
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
-        <td class="list_description">
-          <%= link_to image_tag(url_for('cart.png'), class: 'cart_icon'), cart_path(cart)%>
+        <td>
+          <%= link_to image_tag(url_for('cart.png'), class: 'img-thumbnail'), cart_path(cart)%>
           <p><%="Cart: #{format_date(cart.created_at)}"%></p>
         </td>
         <td>
@@ -26,4 +26,4 @@
   </tbody>
 </table>
 
-<%= link_to I18n.t('views.carts.new'), new_cart_path, :class => btn_class_for(:new) %>
+<%= link_to I18n.t('views.carts.new'), new_cart_path, class: btn_class_for(:new) %>

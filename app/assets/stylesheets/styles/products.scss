@@ -1,3 +1,6 @@
+.product_details {
+  width: 55%;
+}
 .products {
   table {
     border-collapse: collapse;
@@ -8,47 +11,24 @@
     vertical-align: top;
   }
 
-  .list_image {
-    width: 6opx;
-    height: 70px;
-  }
-
-  .list_description {
-    width: 60%
-
-    dl, dd { margin: 0; }
-
-    dt {
-      color: #244;
-      font-weight: bold;
-      font-size: larger;
-    }
-  }
-
-  .list_actions {
-    font-size: x-small;
-    text-align: right;
-    padding-left: 1em;
-  }
-
   .table-striped tbody {
     tr {
       border-top: 1px solid #e0f0fd;
     }
 
-    .list_line_even {
-      border-left: 4px solid #008ede;
+    .product_line {
       padding: 3px;
       clear: both;
-      background-color: #edf8ff;
-      border-bottom: 1px solid #ddf1fc;
+      border-bottom: $products-br-color;
     }
 
-    .list_line_odd {
-      padding: 3px;
-      clear: both;
-      background-color: #fff;
-      border-bottom: 1px solid #ddf1fc;
+    .product_line_even {
+      background-color: $products-bg-even-color;
+      border-left: 4px solid #008ede;
+    }
+
+    .product_line_odd {
+      background-color: $products-bg-odd-color;
     }
   }
 }

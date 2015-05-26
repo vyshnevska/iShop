@@ -1,0 +1,19 @@
+/* Mixin for sizing images */
+@mixin resize($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/*$primary-bg-color:*/
+
+$main-bg-color:   #fff;
+$side-bg-color:   #f8f8f8;
+
+$side-font-color:   #585858;
+
+/*$primary-font-color:*/
+
+$products-bg-even-color: #edf8ff;
+$products-bg-odd-color: #fff;
+
+$products-br-color: 1px solid  #ddf1fc;
