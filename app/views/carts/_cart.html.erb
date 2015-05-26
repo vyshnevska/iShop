@@ -2,16 +2,20 @@
   <%="Cart: #{format_date(cart.created_at)}"%>
 </div>
 
-<div class='cart_items'>
-  <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
-  <ul>
-    <%= render(@cart.cart_items) %>
-    <li class='total_line'>
-      <%= I18n.t('views.carts.total')%>
-      <span><%= number_to_currency(@cart.total_price) %></span>
-    </li>
-  </ul>
-  <div>
-    <%= link_to I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: btn_class_for(:empty) %>  
+<% if @cart.cart_items.any? %>
+  <div class='cart_items'>
+    <%= image_tag(url_for('cart.png'), class: 'cart_icon')%>
+    <ul>
+      <%= render(@cart.cart_items) %>
+      <li class='total_line'>
+        <%= I18n.t('views.carts.total')%>
+        <span><%= number_to_currency(@cart.total_price) %></span>
+      </li>
+    </ul>
+    <div>
+      <%= link_to I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: btn_class_for(:empty) %>  
+    </div>
   </div>
-</div>
+<% else %>
+  <%= I18n.t('views.carts.empty')%>
+<% end %>

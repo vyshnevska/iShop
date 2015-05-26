@@ -1,40 +1,31 @@
-<div class="page-header">
+<div class='page-header'>
   <h1><%= I18n.t('views.store.index.title')%></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th rowspan="2">Image</th>
-      <th colspan="2">Ultimate tensile strength</th>
-      <th rowspan="2">Per cent reduct. area.</th>
-    </tr>
-    <tr>
-      <th>kg/mm<sup>2</sup></th>
-      <th>lb/in<sup>2</sup></th>
-    </tr>
-  </thead>
+<table class='table table-striped'>
   <tbody>
     <% @products.each do |product| %>
-      <%# cache ['entry', product] do %>
-        <!-- <div class="entry"> -->
-        <tr>
-          <td class="image">
-            <%= link_to image_tag(product.image_url, class: 'img-thumbnail'), product_path(product) %>
-          </td>
-          <td>
-            <h3><%= product.title %></h3>
-          </td>
-          <td>  <%= sanitize(product.description) %>
-            <div class="price_line">
-              <span class="price"><%= number_to_currency(product.price)%></span>
+      <tr>
+        <td class='image'>
+          <%= link_to image_tag(product.image_url, class: 'img-thumbnail'), product_path(product) %>
+        </td>
+        <td>
+          <div class='row warning'>
+            <div class='col-md-12'><strong><%= product.title %></strong></div>
+          </div>
+          <div class='row'>
+            <div class='col-md-12'><p><%= sanitize(product.description) %></p></div>
+          </div>
+           <div class='row'>
+            <div class='col-md-6'>
+              <div class='price_line'>
+                <span class='price'><%= number_to_currency(product.price)%></span>
+              </div>
             </div>
-          </td>
-          <td>
-              <%= link_to I18n.t('views.store.index.add_to_cart'), cart_items_path(product_id: product), class: btn_class_for(:add_to_cart) %>
-            
-          </td>
-        </tr>
-      <%# end %>
+            <div class='col-md-6'>
+              <%= link_to I18n.t('views.store.index.add_to_cart'), cart_items_path(product_id: product), method: :post , class: btn_class_for(:add_to_cart) %></div>
+          </div>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
