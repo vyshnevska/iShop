@@ -22,7 +22,7 @@
               </div>
             </div>
             <div class='col-md-6'>
-              <%= link_to I18n.t('views.store.index.add_to_cart'), cart_items_path(product_id: product), method: :post , class: btn_class_for(:add_to_cart) %></div>
+              <%= link_to I18n.t('views.store.index.add_to_cart'), cart_items_path(product_id: product), method: :post, remote: true, class: btn_class_for(:add_to_cart) %></div>
           </div>
         </td>
       </tr>

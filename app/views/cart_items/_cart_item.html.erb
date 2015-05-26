@@ -1,4 +1,4 @@
-<li>
+<li id="<%= cart_item == @current_item ? 'current_item' : '' %>" >
   <%= cart_item.quantity %> &times;
   <%= cart_item.product.title %>
   <span class="item_price">

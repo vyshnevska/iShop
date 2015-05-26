@@ -10,6 +10,7 @@ class CartItemsController < ApplicationController
     respond_to do |format|
       if @cart_item.save
         format.html { redirect_to store_url }
+        format.js   { @current_item = @cart_item }
         format.json { render :show, status: :created, location: @cart_item }
       else
         format.html { render :new }

@@ -33,8 +33,11 @@
     font-weight: bold;
     margin-right: 3em;
   }
+  .row {
+    margin: 0px; 
+  }
 
-  .warning.row { 
+  .row.warning { 
     background-color: #fcf8e3;
   }
 
