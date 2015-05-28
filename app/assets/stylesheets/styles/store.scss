@@ -1,13 +1,11 @@
 .store {
   img {
-    width: 100px;
-    height: 100px;
     margin-right: 5px;
     margin-bottom: 5px;
     position: absolute;
   }
 
-  h3 {
+  /*h3 {
     font-size: 120%;
     font-family: sans-serif;
     margin-left: 100px;
@@ -16,7 +14,7 @@
     background-color: #999;
     border-color: #999;
     color: #fff;
-  }
+  }*/
 
   p, div.price_line {
     margin-left: 100px;
@@ -39,10 +37,5 @@
 
   .row.warning { 
     background-color: #fcf8e3;
-  }
-
-  td.image {
-    width: 105px;
-    height: 105px;
   }
 }

@@ -9,13 +9,6 @@ class CartsController < ApplicationController
   def show
   end
 
-  def new
-    @cart = Cart.new
-  end
-
-  def edit
-  end
-
   def create
     @cart = Cart.new(cart_params)
 
@@ -31,14 +24,11 @@ class CartsController < ApplicationController
   end
 
   def update
+    session[:cart_id] = @cart.id
+
     respond_to do |format|
-      if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cart }
-      else
-        format.html { render :edit }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to carts_path, notice: 'Cart is set as current successfully.' }
+      format.json { render :show, status: :ok, location: @cart }
     end
   end
 

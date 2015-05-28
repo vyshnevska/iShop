@@ -15,10 +15,8 @@
     </div>
   <% end %>
 
-
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= f.submit nil, class: btn_class_for(:new) %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            carts_path, :class => 'btn btn-default' %>
+            carts_path, class: btn_class_for %>
 
 <% end %>

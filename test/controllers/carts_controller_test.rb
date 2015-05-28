@@ -11,11 +11,6 @@ class CartsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:carts)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create cart" do
     assert_difference('Cart.count') do
       post :create, cart: {  }
@@ -29,14 +24,9 @@ class CartsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @cart
-    assert_response :success
-  end
-
   test "should update cart" do
     patch :update, id: @cart, cart: {  }
-    assert_redirected_to cart_path(assigns(:cart))
+    assert_redirected_to carts_path
   end
 
   test "should destroy cart" do

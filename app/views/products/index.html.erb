@@ -8,38 +8,35 @@
     <tr>
       <th></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |product| %>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <td>
-          <%= image_tag(product.image_url(:thumb), class: 'list_image') if product.image? %>
+      <tr class="product_line <%= cycle('product_line_odd', 'product_line_even') %>">
+        <td class='image'>
+          <%= image_tag(product.image_url(:thumb), class: 'img-thumbnail') if product.image? %>
         </td>
-        <td class="list_description">
+        <td>
           <dl>
             <dt><%= link_to product.title, product_path(product) %></dt>
             <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
           </dl>
         </td>
         <td>
-          <td><%= product.price %></td>
+          <span><%= number_to_currency(product.price) %></span>
         </td>
         <td>
           <%= link_to I18n.t('views.nav.edit'),
-                      edit_product_path(product), :class => 'btn btn-default btn-xs' %>
-          <%= link_to I18n.t('views.nav.delete'),
-                      product_path(product),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => I18n.t('views.nav.confirm_delete')) },
-                      :class => 'btn btn-xs btn-primary' %>
+                      edit_product_path(product), class: xs_btn_class_for(:default) %>
+          <%= link_to I18n.t('views.nav.delete'), product_path(product),
+                      method: :delete, :data => { :confirm => I18n.t('views.nav.confirm_delete') },
+                      class: xs_btn_class_for(:destroy) %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to I18n.t('views.products.new'), new_product_path, :class => 'btn btn-primary' %>
+<%= link_to I18n.t('views.products.new'), new_product_path, class: btn_class_for(:new) %>
