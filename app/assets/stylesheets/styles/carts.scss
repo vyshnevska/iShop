@@ -6,7 +6,7 @@
 }
 
 .cart_details {
-  width: 35%;
+  width: 45%;
 
   .row {
     .total_line {
@@ -20,4 +20,15 @@
       float: right;
     }
   }
+
+  .empty-section {
+    height: 80px;
+    padding: 30px 0px 0px 0px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+#current_cart {
+  border-left: 4px solid #eea236;
 }
