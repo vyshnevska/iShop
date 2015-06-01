@@ -22,6 +22,26 @@
     padding: 1em;
     background: $main-bg-color;
     color: $side-font-color;
+
+    form.order, form.product {
+      width: 35%;
+      .control-group {
+        float: right;
+        .controls {
+           width: 30em;
+        }
+      }
+
+      .actions {
+        margin-top: 30px;
+        float: right;
+      }
+    }
+
+    .actions {
+      margin-top: 10px;
+      float: right;
+    }
   }
 
   #side {

@@ -1,3 +1,4 @@
+<div class="actions">
   <%= link_to I18n.t('views.nav.back'),
               url_for(controller: rsr_name.plural, action: :index) %>
   <%= link_to I18n.t('views.nav.edit'),
@@ -8,3 +9,4 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => I18n.t('views.nav.confirm_delete')) },
               :class => btn_class_for(:destroy) %>
+</div>

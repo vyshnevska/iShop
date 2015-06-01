@@ -27,6 +27,7 @@
 
   <% if any_cart_item %>
     <div class='pull-right'>
+      <%= link_to "Checkout", new_order_path, class: btn_class_for(:cart) %>
       <%= link_to I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: btn_class_for(:cart) %>
     </div>
   <% end %>
