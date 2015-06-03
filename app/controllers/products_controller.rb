@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :buyer]
+
+  respond_to :json, :atom
 
   def index
     @products = Product.all
@@ -13,6 +15,15 @@ class ProductsController < ApplicationController
   end
 
   def edit
+  end
+
+  def buyer
+    @latest_order = @product.orders.order(:updated_at).last
+      if stale?(@latest_order)
+        respond_to do |format|
+          format.atom
+        end
+      end
   end
 
   def create

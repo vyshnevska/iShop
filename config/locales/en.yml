@@ -54,6 +54,15 @@ en:
       description: 'Description'
       image: 'Image'
       price: 'Price'
+      feed:
+        buyer: 'Buyer details for %{product} product'
+        quantity: 'Quantity'
+        order: 'Order %{order_id}'
+        paid: 'Paid by %{type}'
+        product: 'Product'
+        shipped: 'Shipped to %{address}'
+        title: 'Feed'
+        total: 'Total Price'
     store:
       index:
         title: 'iShop Catalog'

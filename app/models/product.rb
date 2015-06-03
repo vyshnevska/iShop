@@ -7,6 +7,8 @@ class Product < ActiveRecord::Base
     message: I18n.t('models.product.validations.image')
   }
   has_many :cart_items
+  has_many :orders, through: :cart_items
+
   before_destroy :not_refer_to_cart_item
 
   mount_uploader :image, ImageUploader

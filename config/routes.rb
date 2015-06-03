@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :carts
   resources :cart_items
-  resources :products
+  resources :products do
+    get :buyer, on: :member
+  end
 
   get 'store/index'
 
