@@ -10,4 +10,4 @@ two:
   name: Order 2
   address: Address 1
   email: dave2@example.org
-  pay_type: MyString
+  pay_type: Check

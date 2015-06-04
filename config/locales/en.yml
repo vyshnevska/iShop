@@ -25,6 +25,12 @@ en:
       created: 'Cart item was successfully created.'
     carts:
       empty: 'Your cart is currently empty'
+  mails:
+    order_notifier:
+      received:
+        subject: 'IShop Store Order Confirmation'
+      shipped:
+        subject: 'IShop Store Shipping Confirmation'
   models:
     product:
       validations:
