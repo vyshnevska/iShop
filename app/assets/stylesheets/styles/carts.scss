@@ -32,3 +32,26 @@
 #current_cart {
   border-left: 4px solid #eea236;
 }
+.nav-cart {
+  top: 180px;
+  #cart {
+    .cart-xs {
+      float: left;
+      @include resize(45px, 50px);
+    }
+
+    .cart_details {
+      width: 100%;
+      list-style: none;
+      color: #fff;
+
+      li {
+        line-height: 30px;
+        text-indent: 30px;
+      }
+    }
+  }
+}
+.center-img {
+  margin-left: 15px;
+}

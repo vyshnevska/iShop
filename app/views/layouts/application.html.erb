@@ -7,36 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="banner">
-    <div id="logo">
-      <%= image_tag("shop_logo.png") %>
-      <span><%= @page_title || "{ iShop }" %> </span>
-    </div>
-  </div>
-  <div id="columns">
-    <div id="side">
-      <ul>
-        <li>
-          <%= link_to 'Home', store_path %>
-        </li>
-        <li>
-          <%= link_to 'Products', products_path %>
-        </li>
-        <li>
-          <%= link_to 'Carts', carts_path %>
-        </li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <%= hidden_div_if(@cart.cart_items.empty?, id: 'cart') do %>
-        <%= render @cart, sideway: true %>
-      <% end %>
-    </div>
-    <div id="main" class='<%= controller.controller_name %>'>
-      <%= render partial: "shared/flash_messages", flash: flash %>
-      <div class="container">
-        <%= yield %>
+  <div id="wrapper">
+    <%= render 'layouts/sidebar' %>
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <%= render 'layouts/sign_nav' %>
+        </div>
+        <div class='row'>
+          <div class="col-lg-12">
+            <%= render partial: "shared/flash_messages", flash: flash %>
+            <div class="container <%= controller.controller_name %>">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
 </body>
 </html>

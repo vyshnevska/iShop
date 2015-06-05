@@ -1,0 +1,20 @@
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <h1><%= link_to '_  iShop _', store_path %></h1>
+    </li>
+    <li>
+      <%= link_to 'Products', products_path %>
+    </li>
+    <li>
+      <%= link_to 'Carts', carts_path %>   
+    </li>
+  </ul>
+
+  <div class="sidebar-nav nav-cart">
+    <%= hidden_div_if(@cart.cart_items.empty?, id: 'cart') do %>
+      <%= render 'carts/sidebar_cart' %>
+    <% end %>
+  </div>
+</div>
+

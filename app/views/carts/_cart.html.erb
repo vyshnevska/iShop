@@ -32,10 +32,8 @@
     </div>
   <% end %>
 
-  <% unless local_assigns[:sideway] %>
-    <div class='pull-right'>
-      <%= render 'shared/form_actions', rsr_name: model_class.model_name, rsr_obj: @cart %>
-    </div>
-  <% end %>
+  <div class='pull-right'>
+    <%= render 'shared/form_actions', rsr_name: model_class.model_name, rsr_obj: @cart %>
+  </div>
 
 </div>
