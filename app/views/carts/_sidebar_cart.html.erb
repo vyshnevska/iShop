@@ -7,7 +7,8 @@
       </div>
       <% if any_cart_item %>
         <ul class='cart_details'>
-          <%= render(@cart.cart_items) %>
+          <%#= render(@cart.cart_items) %>
+          <%= render 'cart_items/cart_item' %>
           <li class='price total_line'>
             <%= I18n.t('views.carts.total')%>
             <span><%= number_to_currency(@cart.total_price) %></span>
