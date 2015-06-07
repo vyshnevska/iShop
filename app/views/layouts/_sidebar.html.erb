@@ -12,9 +12,11 @@
   </ul>
 
   <div class="sidebar-nav nav-cart">
-    <%= hidden_div_if(@cart.cart_items.empty?, id: 'cart') do %>
-      <%= render 'carts/sidebar_cart' %>
-    <% end %>
+    <div id="cart">
+      <% if @cart.cart_items.any? %>
+        <%= render 'carts/sidebar_cart' %>
+      <% end %>
+    </div>
   </div>
 </div>
 

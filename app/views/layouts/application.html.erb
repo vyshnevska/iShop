@@ -8,7 +8,9 @@
 </head>
 <body>
   <div id="wrapper">
-    <%= render 'layouts/sidebar' %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/sidebar' %>
+    <% end %>
     <div id="page-content-wrapper">
       <div class="container-fluid">
         <div class="row">

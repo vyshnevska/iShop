@@ -1,6 +1,6 @@
 <%- model_class = Cart -%>
 <%- any_cart_item = @cart.cart_items.any? -%>
-<div class='cart_details'>
+<div id='cart_details'>
   <div class='row'>
     <div class='col-md-12 cart_title'>
       <%="Cart: #{format_date(@cart.created_at)}"%>
