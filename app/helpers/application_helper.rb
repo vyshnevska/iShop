@@ -27,4 +27,8 @@ module ApplicationHelper
     attributes['style'] = 'display: none' if condition
     content_tag("div", attributes, &block)
   end
+
+  def link_to_action(title, url = {}, options = {})
+    link_to(title, url_for(controller: url[:controller], action: url[:action]), options) if controller.respond_to?(url[:action])
+  end
 end

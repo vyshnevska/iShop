@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   resources :orders
 
-  resources :carts
-  resources :cart_items
+  resources :carts, except: [:edit, :new]
+  resources :cart_items, only: :create
   resources :products do
     get :buyer, on: :member
   end
 
-  get 'store/index'
+  resources :store, only: :index
 
   root to: 'store#index', as: 'store'
+
+  get '*path' => redirect('/')
 end
