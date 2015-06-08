@@ -1,15 +1,20 @@
 <div id="sidebar-wrapper">
-  <ul class="sidebar-nav">
-    <li class="sidebar-brand">
-      <h1><%= link_to '_  iShop _', store_path %></h1>
-    </li>
-    <li>
-      <%= link_to 'Products', products_path %>
-    </li>
-    <li>
-      <%= link_to 'Carts', carts_path %>   
-    </li>
-  </ul>
+  <div class="sidebar-nav">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <h1><%= link_to I18n.t('views.sidebar.nav_1'), store_path %></h1>
+      </li>
+      <li>
+        <%= link_to I18n.t('views.sidebar.nav_2'), orders_path %>
+      </li>
+      <li>
+        <%= link_to I18n.t('views.sidebar.nav_3'), carts_path %>
+      </li>
+      <li>
+        <%= link_to I18n.t('views.sidebar.nav_4'), products_path %>
+      </li>
+    </ul>
+  </div>
 
   <div class="sidebar-nav nav-cart">
     <div id="cart">

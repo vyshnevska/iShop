@@ -54,6 +54,11 @@ en:
       set_current: 'Set to Current'
       user_cart: 'Your Cart'
       total: 'Total'
+    auth_nav:
+      login: 'Login'
+      logout: 'Logout'
+      profile: 'Edit profile'
+      sign_up: 'Sign up'
     products:
       new: 'New Product'
       title: 'Title'
@@ -69,6 +74,11 @@ en:
         shipped: 'Shipped to %{address}'
         title: 'Feed'
         total: 'Total Price'
+    sidebar:
+      nav_1: '_  iShop _'
+      nav_2: 'Orders'
+      nav_3: 'Carts'
+      nav_4: 'Products'
     store:
       index:
         title: 'iShop Catalog'
