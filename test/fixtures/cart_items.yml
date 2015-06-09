@@ -2,9 +2,11 @@
 
 one:
   product: ruby
-  order: one
+  order: paid_by_check
   cart: one
+  quantity: 1
 
 two:
   product: ruby 
   cart: one 
+  quantity: 1
