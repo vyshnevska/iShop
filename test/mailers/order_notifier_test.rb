@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'pry'
 
 class OrderNotifierTest < ActionMailer::TestCase
   test "received" do
