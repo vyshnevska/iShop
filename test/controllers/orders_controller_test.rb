@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
-    @order = orders(:one)
+    sign_in users(:user1)
+    @order = orders(:paid_by_check)
   end
 
   test "requires item in cart" do

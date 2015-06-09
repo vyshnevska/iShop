@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class CartsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
+    sign_in users(:user1)
     @cart = carts(:one)
   end
 

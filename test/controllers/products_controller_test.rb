@@ -1,14 +1,17 @@
 require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @product = products(:one)
     @mock_product = {
-      title: 'Lorem Ipsum',
-      description: 'Wibbles are fun!',
-      image: fixture_file_upload("files/test.gif"),
-      price: 19.95
-    }
+        title: 'Lorem Ipsum',
+        description: 'Wibbles are fun!',
+        image: fixture_file_upload("files/test.gif"),
+        price: 19.95
+      }
+    sign_in users(:user1)
   end
 
   test "should get index" do

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+paid_by_check:
   name: Order 1
   address: Address 1
   email: dave1@example.org
   pay_type: Check
 
-two:
+paid_by_card:
   name: Order 2
   address: Address 1
   email: dave2@example.org
-  pay_type: Check
+  pay_type: Credit card
