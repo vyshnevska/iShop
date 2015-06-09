@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionController::TestCase
-  include Devise::TestHelpers
-
   setup do
     sign_in users(:user1)
     @order = orders(:paid_by_check)

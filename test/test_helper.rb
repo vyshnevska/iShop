@@ -20,3 +20,7 @@ class ActiveSupport::TestCase
     CarrierWave.clean_cached_files!(0)
   end
 end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
