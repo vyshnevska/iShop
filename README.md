@@ -18,3 +18,10 @@ Follow the book 'Agile Web Development with Rails 4'(Sam Ruby, Dave Thomas, Davi
 *  **Tests Coverage**
 
 *  **Rails Best Practices**
+
+
+=========
+To retrieve the information using the public api(without token authentication)
+```
+ curl -X GET 'http://localhost:3000/api/orders'
+```
