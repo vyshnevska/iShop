@@ -12,10 +12,18 @@ Rails.application.routes.draw do
 
   root to: 'store#index', as: 'store'
 
-  get '*path' => redirect('/')
-
-  namespace :api, path: '/', constraints: { subdomain: 'api' } do
+  namespace :api do
     resources :orders
+
+    namespace :v1 do
+      resources :orders
+    end
+
+    namespace :v2 do
+      resources :orders
+    end
+    get '*path' => redirect('/')
   end
 
+  get '*path' => redirect('/')
 end

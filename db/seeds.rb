@@ -10,3 +10,7 @@ Product.create!(title: 'Programming Ruby 1.9 & 2.0',
       </p>},
   image: File.open('test/fixtures/files/test.gif'),
   price: 49.95)
+
+User.create(email: 'test_user@ishop.com',
+            password: '1q2w3e4r',
+            password_confirmation: '1q2w3e4r')

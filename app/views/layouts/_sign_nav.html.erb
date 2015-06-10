@@ -5,5 +5,5 @@
   <%= link_to I18n.t('views.auth_nav.logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
   <%= link_to I18n.t('views.auth_nav.sign_up'), new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to I18n.t('views.auth_nav.log_in'), new_user_session_path, :class => 'navbar-link'  %>
+  <%= link_to I18n.t('views.auth_nav.login'), new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
