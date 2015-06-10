@@ -14,5 +14,19 @@ module API
       order = Order.find(params[:id])
       render json: order, status: :ok
     end
+
+    def create
+      order = Order.create!(order_params)
+      if order
+        render json: order, status: :created
+      else
+        render json: order.errors, status: :unprocessable_entity
+      end
+    end
+
+    private
+      def order_params
+        params.require(:order).permit(:name, :address, :email, :pay_type)
+      end
   end
 end
