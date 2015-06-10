@@ -14,6 +14,9 @@ gem 'quiet_assets'
 
 gem 'devise'
 
+gem 'rails-api', '0.3.1'
+gem 'simple_token_authentication', '1.6.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

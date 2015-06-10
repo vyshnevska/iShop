@@ -1,6 +1,7 @@
 module API
   class OrdersController < ApplicationController
-    skip_before_filter :authenticate_user!
+    acts_as_token_authentication_handler_for User, fallback_to_devise: false
+    before_action :authenticate_user!
 
     def index
       orders = Order.all

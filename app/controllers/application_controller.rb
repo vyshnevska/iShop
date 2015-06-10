@@ -1,7 +1,6 @@
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+class ApplicationController < ActionController::Base #ActionController::API
   protect_from_forgery with: :exception
+  acts_as_token_authentication_handler_for User, fallback_to_devise: false
 
   before_action :authenticate_user!
   before_action :set_session_cart
