@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'pry'
 
 class OrdersListingTest < ActionDispatch::IntegrationTest
   fixtures :all
@@ -9,7 +8,7 @@ class OrdersListingTest < ActionDispatch::IntegrationTest
   end
 
   test 'return a list of orders' do
-    get 'api/orders'
+    get 'api/v1/orders'
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
     orders = json(response.body)
@@ -20,7 +19,7 @@ class OrdersListingTest < ActionDispatch::IntegrationTest
   end
 
   test 'return orders filtered by pay type' do
-    get 'api/orders?pay_type=Check'
+    get 'api/v1/orders?pay_type=Check'
     assert_equal 200, response.status
     orders = json(response.body)
     names = orders.collect { |order| order[:name] }
@@ -28,17 +27,17 @@ class OrdersListingTest < ActionDispatch::IntegrationTest
   end
 
   test 'return first order' do
-    get 'api/orders/'+ Order.first.id.to_s
+    get 'api/v1/orders/'+ Order.first.id.to_s
     assert_equal 200, response.status
     assert_equal response.body, Order.first.to_json
   end
 
   test 'creating a new order with Check pay type' do
-    post 'api/orders', { order: { name: 'Test Order',
-                                  address: 'San Francisco, 4214 Nydalen',
-                                  email: 'test@ishop.com',
-                                  pay_type: 'Check'}
-                        }
+    post 'api/v1/orders', { order: { name: 'Test Order',
+                                    address: 'San Francisco, 4214 Nydalen',
+                                    email: 'test@ishop.com',
+                                    pay_type: 'Check'}
+                          }
     { 'Accept' => 'Mime::JSON', 'Content-Type' => Mime::JSON.to_s}
 
     assert_equal 201, response.status

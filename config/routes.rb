@@ -14,6 +14,15 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :orders
+
+    namespace :v1 do
+      resources :orders
+    end
+
+    namespace :v2 do
+      resources :orders
+    end
+    get '*path' => redirect('/')
   end
 
   get '*path' => redirect('/')

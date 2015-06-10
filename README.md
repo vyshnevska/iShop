@@ -20,8 +20,14 @@ Follow the book 'Agile Web Development with Rails 4'(Sam Ruby, Dave Thomas, Davi
 *  **Rails Best Practices**
 
 
+API
 =========
-To retrieve the information using the public api(without token authentication)
+To retrieve the information using the public api(without token authentication):
 ```
- curl -X GET 'http://localhost:3000/api/orders'
+ curl -X GET 'http://localhost:3000/api/v1/orders'
+```
+
+To retrieve the information using token authentication:
+```
+ curl -i -H "Authorization: Token token=valid_token" 'http://localhost:3000/api/v2/orders'
 ```
