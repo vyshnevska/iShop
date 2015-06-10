@@ -1,4 +1,4 @@
-iShop App:
+iShop App (https://ishopapp.herokuapp.com)
 ---------
 
       Rails   4.1
@@ -24,7 +24,9 @@ API
 =========
 To retrieve the information using the public api(without token authentication):
 ```
- curl -X GET 'http://localhost:3000/api/v1/orders'
+ curl -X GET 'http://localhost:3000/api/v1/orders' 
+ or
+ https://ishopapp.herokuapp.com/api/v1/orders
 ```
 
 To retrieve the information using token authentication:
