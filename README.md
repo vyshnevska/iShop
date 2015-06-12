@@ -1,4 +1,4 @@
-iShop App (https://ishopapp.herokuapp.com)
+iShop App
 ---------
 
       Rails   4.1
@@ -7,6 +7,10 @@ iShop App (https://ishopapp.herokuapp.com)
       Assets: Sass, Bootstrap3, Twitter-Bootstrap, JQuery, CarrierWave File Uploader
       Tests:  MiniTest, Fixtures
       Debug:  Pry
+
+Production:
+      Amazon: http://52.11.131.71
+      Heroku: https://ishopapp.herokuapp.com
 
 A web-based shopping cart application
 =========
