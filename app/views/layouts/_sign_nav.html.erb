@@ -1,8 +1,8 @@
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to I18n.t('views.auth_nav.profile'), edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to I18n.t('views.auth_nav.logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <%= link_to_with_access I18n.t('views.auth_nav.profile'), edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to_with_access I18n.t('views.auth_nav.logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
   <%= link_to I18n.t('views.auth_nav.sign_up'), new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to I18n.t('views.auth_nav.login'), new_user_session_path, :class => 'navbar-link'  %>

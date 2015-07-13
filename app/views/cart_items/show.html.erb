@@ -8,5 +8,5 @@
   <%= @cart_item.cart %>
 </p>
 
-<%= link_to I18n.t('views.nav.edit'), edit_cart_item_path(@cart_item) %> |
+<%= link_to_with_access I18n.t('views.nav.edit'), edit_cart_item_path(@cart_item) %> |
 <%= link_to I18n.t('views.nav.back'), cart_items_path %>

@@ -24,9 +24,9 @@
         <td><%= order.pay_type %></td>
         <td><%=l order.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to_with_access t('.edit', :default => t("helpers.links.edit")),
                       edit_order_path(order), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to_with_access t('.destroy', :default => t("helpers.links.destroy")),
                       order_path(order),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
@@ -37,6 +37,4 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_order_path,
-            :class => 'btn btn-primary' %>
+<%= link_to_with_access t('.new', :default => t("helpers.links.new")), new_order_path, :class => 'btn btn-primary' %>

@@ -36,6 +36,7 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
+    cancan (1.6.10)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -111,8 +112,10 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redis (3.2.1)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rollout (2.1.0)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -160,6 +163,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.4)
+  cancan
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
@@ -172,6 +176,8 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.4)
   rails-i18n (~> 4.0.0)
+  redis
+  rollout
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

@@ -29,6 +29,10 @@ module ApplicationHelper
   end
 
   def link_to_action(title, url = {}, options = {})
-    link_to(title, url_for(controller: url[:controller], action: url[:action]), options) if controller.respond_to?(url[:action])
+    link_to(title, url_for(controller: url[:controller], action: url[:action]), options) if controller.respond_to?(url[:action]) if rollout?(:editing)
+  end
+
+  def link_to_with_access(*args, &block)
+    link_to(*args, &block) if rollout?(:editing)
   end
 end

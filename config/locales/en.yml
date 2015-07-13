@@ -21,6 +21,8 @@
 
 en:
   controllers:
+    main:
+      access_not_allowed: 'You are not permitted to this action! Contact Admin for any questions.'
     cart_items:
       created: 'Cart item was successfully created.'
     carts:

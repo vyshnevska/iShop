@@ -18,5 +18,5 @@
 
 <div class='pull-right'>
   <%= link_to "Checkout", new_order_path, class: xs_btn_class_for(:cart) %>
-  <%= link_to I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: xs_btn_class_for(:cart) %>
+  <%= link_to_with_access I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: xs_btn_class_for(:cart) %>
 </div>

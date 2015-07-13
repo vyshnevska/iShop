@@ -18,8 +18,8 @@
         </td>
         <td>
           <%= link_to I18n.t('views.nav.show'), cart , class: xs_btn_class_for(:default) %>
-          <%= link_to I18n.t('views.carts.set_current'), cart, method: :put, class: xs_btn_class_for(:cart) %>
-          <%= link_to I18n.t('views.nav.delete'), cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: xs_btn_class_for(:destroy)%>
+          <%= link_to_with_access I18n.t('views.carts.set_current'), cart, method: :put, class: xs_btn_class_for(:cart) %>
+          <%= link_to_with_access I18n.t('views.nav.delete'), cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: xs_btn_class_for(:destroy)%>
         </td>
       </tr>
     <% end %>

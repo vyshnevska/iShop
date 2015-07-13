@@ -29,9 +29,9 @@
         </td>
         <td>
           <%= link_to I18n.t('views.products.feed.title'), buyer_product_path(product, format: 'atom'), class: xs_btn_class_for(:default) %>
-          <%= link_to I18n.t('views.nav.edit'),
+          <%= link_to_with_access I18n.t('views.nav.edit'),
                       edit_product_path(product), class: xs_btn_class_for(:default) %>
-          <%= link_to I18n.t('views.nav.delete'), product_path(product),
+          <%= link_to_with_access I18n.t('views.nav.delete'), product_path(product),
                       method: :delete, :data => { :confirm => I18n.t('views.nav.confirm_delete') }, class: xs_btn_class_for(:destroy) %>
         </td>
       </tr>
@@ -39,4 +39,4 @@
   </tbody>
 </table>
 
-<%= link_to I18n.t('views.products.new'), new_product_path, class: btn_class_for(:new) %>
+<%= link_to_with_access I18n.t('views.products.new'), new_product_path, class: btn_class_for(:new) %>

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_action :set_session_cart
+  before_action :check_access_level, only: [:edit, :update, :delete, :new, :create]
 
   private
     def set_session_cart
@@ -17,5 +18,16 @@ class ApplicationController < ActionController::Base
       cart = Cart.create
       session[:cart_id] = cart.id
       cart
+    end
+
+    def rollout?(name)
+      $rollout.active? name, current_user
+    end
+    helper_method :rollout?
+
+    def check_access_level
+      unless rollout?(:editing)
+        redirect_to store_path, flash: { error: I18n.t('controllers.main.access_not_allowed')}
+      end
     end
 end
