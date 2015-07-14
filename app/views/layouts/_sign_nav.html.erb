@@ -20,7 +20,9 @@
       </ul>
     </div>
     <h1><%= I18n.t('app.name') %> <small><%= I18n.t('app.descr') %></small></h1>
-    <span class='nav-bar right'><%= I18n.t('app.logged_as') %> <strong><%= current_user.email %></strong>.</span>
+    <% if current_user %>
+      <span class='nav-bar right'><%= I18n.t('app.logged_as') %> <strong><%= current_user.email %></strong>.</span>
+    <% end %>
     <hr/>
   </div>
 </div>

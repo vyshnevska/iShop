@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_action :set_session_cart
-  before_action :check_access_level, only: [:edit, :update, :delete, :new, :create]
+  before_action :check_access_level, only: [:update, :delete, :create]
 
   private
     def set_session_cart
@@ -26,8 +26,12 @@ class ApplicationController < ActionController::Base
     helper_method :rollout?
 
     def check_access_level
-      unless rollout?(:editing)
-        redirect_to store_path, flash: { error: I18n.t('controllers.main.access_not_allowed')}
+      if current_user
+        unless rollout?(:editing)
+          redirect_to store_path, flash: { error: I18n.t('controllers.main.access_not_allowed')}
+        end
+      else
+        redirect_to new_user_session_path
       end
     end
 end
