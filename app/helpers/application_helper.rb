@@ -35,4 +35,8 @@ module ApplicationHelper
   def link_to_with_access(*args, &block)
     link_to(*args, &block) if rollout?(:editing)
   end
+
+  def button_to_with_access(*args, &block)
+    button_to(*args, &block) if rollout?(:editing)
+  end
 end

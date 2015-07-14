@@ -1,24 +1,16 @@
 <%- model_class = Cart -%>
+<h5>Cart</h5><hr>
+<div>
+  <ul class='cart_details subheader'>
+    <% @cart.cart_items.each do |cart_item| %>
+      <%= render 'cart_items/cart_item', cart_item: cart_item %>
+    <% end %>
+    <li class='price total_line'>
+      <%= I18n.t('views.carts.total')%>
+      <span><%= number_to_currency(@cart.total_price) %></span>
+    </li>
+  </ul>
 
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class="center-img">
-      <%= image_tag(url_for('cart.png'), class: 'cart-xs')%>
-    </div>
-    <ul class='cart_details'>
-      <% @cart.cart_items.each do |cart_item| %>
-        <%= render 'cart_items/cart_item', cart_item: cart_item %>
-      <% end %>
-      <li class='price total_line'>
-        <%= I18n.t('views.carts.total')%>
-        <span><%= number_to_currency(@cart.total_price) %></span>
-      </li>
-    </ul>
-  </div>
+  <h6><%= link_to "Checkout", new_order_path %></h6>
+  <h6><%= button_to_with_access I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: 'tiny button' %></h6>
 </div>
-
-<div class='pull-right'>
-  <%= link_to "Checkout", new_order_path, class: xs_btn_class_for(:cart) %>
-  <%= link_to_with_access I18n.t('views.carts.empty'), @cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: xs_btn_class_for(:cart) %>
-</div>
-
