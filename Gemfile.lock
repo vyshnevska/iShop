@@ -56,6 +56,12 @@ GEM
     foundation-rails (5.5.2.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
+    foundation_rails_helper (1.0.0)
+      actionpack (~> 4.1, >= 4.1.1)
+      activemodel (~> 4.1, >= 4.1.1)
+      activesupport (~> 4.1, >= 4.1.1)
+      railties (~> 4.1, >= 4.1.1)
+      tzinfo (~> 1.2, >= 1.2.2)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.13)
@@ -162,6 +168,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   foundation-rails (~> 5.5.0)
+  foundation_rails_helper
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails

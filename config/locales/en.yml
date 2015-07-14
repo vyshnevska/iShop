@@ -20,6 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  app:
+    app_name: 'iShop App'
+    name: 'iShop'
+    descr: 'Shopping cart app.'
+    logged_as: 'Logged in as'
+    about: 'About Us'
+    contact: 'Contact'
+    copyright: '© Copyright 2015. All rights reserved.'
   controllers:
     main:
       access_not_allowed: 'You are not permitted to this action! Contact Admin for any questions.'

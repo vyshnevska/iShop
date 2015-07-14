@@ -19,8 +19,8 @@
       <% end %>
       </ul>
     </div>
-    <h1>iShop <small>Shopping cart app.</small></h1>
-    <span class='nav-bar right'>Logged in as <strong><%= current_user.email %></strong>.</span>
+    <h1><%= I18n.t('app.name') %> <small><%= I18n.t('app.descr') %></small></h1>
+    <span class='nav-bar right'><%= I18n.t('app.logged_as') %> <strong><%= current_user.email %></strong>.</span>
     <hr/>
   </div>
 </div>

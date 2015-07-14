@@ -1,12 +1,4 @@
 module ApplicationHelper
-  def bootstrap_class_for flash_type
-    { success: 'alert-success',
-      error:   'alert-danger',
-      alert:   'alert-warning',
-      notice:  'alert-info'
-    }[flash_type.to_sym] || flash_type.to_s
-  end
-
   def btn_class_for btn_type = 'btn btn-default'
     { new:      'btn btn-primary',
       edit:     'btn btn-info',

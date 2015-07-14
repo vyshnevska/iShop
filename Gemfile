@@ -8,6 +8,7 @@ gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'foundation-rails', '~> 5.5.0'
+gem 'foundation_rails_helper'
 gem 'sass-rails', '~>5.0.0'
 
 gem 'quiet_assets'
