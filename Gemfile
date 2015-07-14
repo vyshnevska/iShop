@@ -7,9 +7,9 @@ gem 'rails', '4.1.4'
 gem 'mysql2'
 
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.3.4'
-gem 'sass-rails', '~> 4.0.3'
-gem 'twitter-bootstrap-rails'
+gem 'foundation-rails', '~> 5.5.0'
+gem 'sass-rails', '~>5.0.0'
+
 gem 'quiet_assets'
 
 gem 'devise'

@@ -1,27 +1,55 @@
-<div id="sidebar-wrapper">
-  <div class="sidebar-nav">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <h1><%= link_to I18n.t('views.sidebar.nav_1'), store_path %></h1>
-      </li>
-      <li>
-        <%= link_to I18n.t('views.sidebar.nav_2'), orders_path %>
-      </li>
-      <li>
-        <%= link_to I18n.t('views.sidebar.nav_3'), carts_path %>
-      </li>
-      <li>
-        <%= link_to I18n.t('views.sidebar.nav_4'), products_path %>
-      </li>
-    </ul>
-  </div>
+<!-- <div class="large-3 pull-9 columns"> -->
+<!-- <div class="large-3 pull-9 small-6 columns"> -->
+  <div class="row">
+    <div class="large-1 column">
+      <img src="http://placehold.it/50x50&text=[img]">
+    </div>
 
-  <div class="sidebar-nav nav-cart">
-    <div id="cart">
-      <% if @cart.cart_items.any? %>
-        <%= render 'carts/sidebar_cart' %>
-      <% end %>
+    <div class="large-9 columns">
+      <h4><%= link_to I18n.t('views.sidebar.nav_1'), store_path %></h4>
+      <h6 class="subheader show-for-small">Doors at 00:00pm</h6>
+    </div>
+  </div><hr>
+
+  <div class="hide-for-small">
+    <div class="row">
+      <div class="large-1 column">
+        <img src="http://placehold.it/50x50&text=[img]">
+      </div>
+
+      <div class="large-9 columns">
+        <h5 class="subheader"><%= link_to I18n.t('views.sidebar.nav_2'), orders_path %></h5>
+      </div>
+    </div><hr>
+
+    <div class="row">
+      <div class="large-1 column">
+        <img src="http://placehold.it/50x50&text=[img]">
+      </div>
+
+      <div class="large-9 columns">
+        <h5 class="subheader"><%= link_to I18n.t('views.sidebar.nav_3'), carts_path %></h5>
+      </div>
+    </div><hr>
+
+    <div class="row">
+      <div class="large-1 column">
+        <img src="http://placehold.it/50x50&text=[img]">
+      </div>
+
+      <div class="large-9 columns">
+        <h5 class="subheader"><%= link_to I18n.t('views.sidebar.nav_4'), products_path %></h5>
+      </div>
     </div>
   </div>
-</div>
 
+ <!-- <p><img src="http://placehold.it/320x240&text=Ad"/></p> -->
+
+  <a href="#">
+    <div id="cart" class="panel callout radius">
+      <% if @cart.cart_items.any? %>
+        <h6>Cart Items here</h6>
+        <%#= render 'carts/sidebar_cart' %>
+      <% end %>
+    </div>
+  </a>

@@ -77,7 +77,7 @@ en:
         title: 'Feed'
         total: 'Total Price'
     sidebar:
-      nav_1: '_  iShop _'
+      nav_1: 'iShop'
       nav_2: 'Orders'
       nav_3: 'Carts'
       nav_4: 'Products'
