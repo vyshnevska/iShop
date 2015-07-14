@@ -4,7 +4,7 @@
   <%= link_to_action I18n.t('views.nav.edit'),
                      { controller: rsr_name.plural, action: :edit, id: rsr_obj },
                      :class => btn_class_for(:edit) %>
-  <%= link_to_action I18n.t('views.nav.delete'),
+  <%= button_to_action I18n.t('views.nav.delete'),
                      { controller: rsr_name.plural, action: :destroy, id: rsr_obj },
                      :method => :delete, :data => { :confirm => t('.confirm', :default => I18n.t('views.nav.confirm_delete')) },
                      :class => btn_class_for(:destroy) %>

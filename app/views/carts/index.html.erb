@@ -2,28 +2,9 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.model_name.human %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @carts.each do |cart| %>
-      <tr id="<%= mark_current_cart(cart.id) %>">
-        <td>
-          <%= link_to image_tag(url_for('cart.png'), class: 'img-thumbnail'), cart_path(cart)%>
-          <p><%="Cart: #{format_date(cart.created_at)}"%></p>
-        </td>
-        <td>
-          <%= link_to I18n.t('views.nav.show'), cart , class: xs_btn_class_for(:default) %>
-          <%= link_to_with_access I18n.t('views.carts.set_current'), cart, method: :put, class: xs_btn_class_for(:cart) %>
-          <%= link_to_with_access I18n.t('views.nav.delete'), cart, method: :delete, data: { confirm: I18n.t('views.nav.confirm_delete')}, class: xs_btn_class_for(:destroy)%>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<%= link_to I18n.t('views.carts.new'), carts_path, method: :post, class: btn_class_for(:new) %>
+<% @carts.each do |cart| %>
+   <%= render 'cart', cart: cart %>
+<% end %>
+
+<%= button_to I18n.t('views.carts.new'), carts_path, method: :post, class: btn_class_for(:new) %>
