@@ -12,9 +12,12 @@
 /tmp
 .DS_Store
 
+
 # Ignore configs
 config/database.yml
 config/secrets.yml
+*.example
+*.dylib
 
 # Sublime Text
 *.sublime-project
