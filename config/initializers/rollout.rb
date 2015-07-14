@@ -3,3 +3,5 @@ $rollout = Rollout.new($redis)
 $rollout.define_group(:admin) do |user|
   user.admin?
 end
+
+RolloutUi.wrap($rollout)

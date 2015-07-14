@@ -44,3 +44,4 @@ gem 'pry', :group => :development
 gem 'cancan'
 gem 'redis'
 gem 'rollout'
+gem 'rollout_ui'

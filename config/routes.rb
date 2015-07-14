@@ -25,5 +25,7 @@ Rails.application.routes.draw do
     get '*path' => redirect('/')
   end
 
+  mount RolloutUi::Engine => "/rollout"
+
   get '*path' => redirect('/')
 end
