@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     end
 
     def rollout?(name)
-      $rollout.active? name, current_user
+      $rollout.active?(name, current_user) if redis_running?
     end
     helper_method :rollout?
 
@@ -32,6 +32,15 @@ class ApplicationController < ActionController::Base
         end
       else
         redirect_to new_user_session_path
+      end
+    end
+
+    def redis_running?
+      begin
+        $redis.ping
+      rescue Redis::CannotConnectError
+        Logger.new(STDOUT).info("Redis::CannotConnectError".red)
+        return
       end
     end
 end

@@ -46,3 +46,5 @@ gem 'cancan'
 gem 'redis'
 gem 'rollout'
 gem 'rollout_ui'
+
+gem 'colorize'
