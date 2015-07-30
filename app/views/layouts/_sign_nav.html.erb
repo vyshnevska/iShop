@@ -1,9 +1,28 @@
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to_with_access I18n.t('views.auth_nav.profile'), edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to_with_access I18n.t('views.auth_nav.logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to I18n.t('views.auth_nav.sign_up'), new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to I18n.t('views.auth_nav.login'), new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="nav-bar right">
+     <ul class="button-group">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to_with_access I18n.t('views.auth_nav.profile'), edit_user_registration_path, class: 'button' %>
+        </li>
+        <li>
+          <%= link_to_with_access I18n.t('views.auth_nav.logout'), destroy_user_session_path, method: :delete, class: 'button' %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to I18n.t('views.auth_nav.sign_up'), new_user_registration_path, class: 'button' %>
+        </li>
+        <li>
+          <%= link_to I18n.t('views.auth_nav.login'), new_user_session_path, class: 'button' %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+    <h1><%= I18n.t('app.name') %> <small><%= I18n.t('app.descr') %></small></h1>
+    <% if current_user %>
+      <span class='nav-bar right'><%= I18n.t('app.logged_as') %> <strong><%= current_user.email %></strong>.</span>
+    <% end %>
+    <hr/>
+  </div>
+</div>

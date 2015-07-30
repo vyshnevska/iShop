@@ -1,12 +1,9 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   def index
     @carts = Cart.all
-  end
-
-  def show
   end
 
   def create
@@ -14,7 +11,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html { redirect_to carts_path, notice: 'Cart was successfully created.' }
         format.json { render :show, status: :created, location: @cart }
       else
         format.html { render :new }
@@ -33,11 +30,11 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart.destroy if @cart.id == session[:cart_id]
-    session[:cart_id] = nil
+    session[:cart_id] = nil if session[:cart_id] == @cart.id
+    @cart.destroy
 
     respond_to do |format|
-      format.html { redirect_to store_url, notice: I18n.t('controllers.carts.empty') }
+      format.html { redirect_to carts_url, notice: I18n.t('controllers.carts.empty') }
       format.json { head :no_content }
     end
   end

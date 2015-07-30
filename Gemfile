@@ -7,12 +7,14 @@ gem 'rails', '4.1.4'
 gem 'mysql2'
 
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.3.4'
-gem 'sass-rails', '~> 4.0.3'
-gem 'twitter-bootstrap-rails'
+gem 'foundation-rails', '~> 5.5.0'
+gem 'foundation_rails_helper'
+gem 'sass-rails', '~>5.0.0'
+
 gem 'quiet_assets'
 
 gem 'devise'
+gem 'rails_admin'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -45,3 +47,5 @@ gem 'cancan'
 gem 'redis'
 gem 'rollout'
 gem 'rollout_ui'
+
+gem 'colorize'
